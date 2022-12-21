@@ -1,0 +1,141 @@
+.chat-box {
+    /* background-color: #f7f7f7; */
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-top: 80px;
+}
+
+.chat-title {
+    padding: 15px;
+    border-bottom: 1px solid rgb(223, 5, 5);
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-color);
+    position: absolute;
+    color: var(--white);
+    /* border-radius: 10px; */
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+.chat-title h5{
+    margin-bottom: 0px;
+}
+.chat-title button {
+    margin-left: auto;
+}
+
+.chat-box .chat-title img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chat-box .chat-title h5{
+    font-size: 16px;
+}
+.chat-body {
+    max-height: 50vh;
+    overflow: scroll;
+    scrollbar-width: thin;
+}
+
+.chat-content {
+    padding: 8px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    scrollbar-width: thin;
+    
+}
+
+.chat-content::-webkit-scrollbar,.chat-body::-webkit-scrollbar {
+    /* -webkit-appearance: none; */
+    scrollbar-width: thin;
+    /* width: 5px; */
+}
+
+.chat-content p {
+    background-color: #3ca89c;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+    max-width: 50%;
+    color: var(--white) !important;
+}
+
+/* .sender-chat-content{
+    justify-content: end;
+    text-align: right;
+} */
+.sender-chat-content li {
+    order: 1;
+    color: #fff;
+    /* background-color: #5fc4b8; */
+    margin-bottom: 0px !important;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.sender-chat-content li p {
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+
+.sender-chat-content img {
+    order: 2;
+}
+
+.chat-footer {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    height: 50px;
+}
+
+.chat-footer textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px 12px;
+    padding-right: 70px;
+    resize: none;
+}
+
+.message_form {
+    position: relative;
+}
+
+.message_form input[type="submit"] {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.chat-head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.mystyle {
+    background-color: antiquewhite;
+    border: 2px solid;
+}
+@media (max-width:768px){
+    .chat-title{
+        padding: 10px 15px;
+    }
+}
+.text-gray{
+    color: rgb(144, 211, 173);
+}

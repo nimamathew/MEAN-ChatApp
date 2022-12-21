@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* 
+ {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  
+} */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.data {
+    background: url('https://drive.google.com/uc?export=view&id=1xu0Nu4Ve4z3n66wDDZmraUxZPNrllhmL');
+    /* background-image: url('..//.///../assets/HOME.jfif'); */
+    height: 100vh;
+    margin-left: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #63737d;
+   
+}
+
+
+.nav {
+    background: #1D2951;
+    line-height: 80px;
+    position: fixed;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    
+}
+
+nav label h3{
+    line-height: 80px;
+    font-size: 30px;
+    color: white;
+    font-weight: 200;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    line-height: 80px;
+    margin: 0 10px;
+    
+}
+
+  
+nav ul li a {
+    color: white;
+    font-size: 20px;
+    padding: 6px 15px;
+    font-weight: 600;
+    background-color: rgb(23, 16, 224);
+    border-radius: 3px;
+    margin-left: 1150px;
+    text-decoration: none;
+  
+  
+}
+
+nav ul li a:hover {
+    background-color: rgb(8, 113, 29);
+    color: white;
+    transition: 0.5s;
+}
+
+.side-menu {
+    position: fixed;
+    background: #1D2951;
+    width: 250px;
+    height: 100%;
+    margin-top: 0;
+    margin-top: 80px;
+}
+
+.side-menu center img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-top: 30px; 
+     border: 3px solid white;
+}
+
+.side-menu  h2 {
+    color: rgb(11, 8, 8);
+}
+
+.side-menu a {
+    display: block;
+    line-height: 60px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.side-menu a:hover {
+    background: rgb(20, 54, 165);
+    padding-left: 20px;
+}
+
+.side-menu span {
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+.side-menu i {
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+}
+
+nav .menu-bar {
+    float: right;
+    margin-top: 20px;
+    display: none;
+    margin-right: 20px;
+}
+
+#menu {
+    display: none;
+}
+
+.side-menu .Logout {
+    display: none; 
+}
+
+.dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  .dropdown-btn:hover {
+    color: #f1f1f1;
+    
+  }
+
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+
+
+
+
+@media (max-width:850px) {
+    .side-menu a span {
+        display: none;
+    }
+
+    .side-menu center {
+        display: none;
+    }
+
+    .side-menu {
+        width: 100px;
+    }
+
+    .side-menu a i {
+        display: block;
+        line-height: 80px;
+        text-align: center;
+        margin-left: 0;
+        font-size: 35px;
+    }
+
+    .data {
+        position: fixed;  
+        margin-left: 100px;
+    }
+}
+
+/* @media (max-width:650px) {
+    .data {
+        display: none;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .side-menu {
+        width: 100%;
+        text-align: center;
+        left: 100%;
+        background-color: #4c516d;
+        transition: all 0.5s;
+    }
+
+    .side-menu a i {
+        display: none;
+    }
+
+    .side-menu a span {
+        display: block;
+    }
+
+    .side-menu .Logout {
+        display: block;
+    }
+
+    nav .menu-bar {
+        display: block;
+    }
+} */
+
+#menu:checked~.side-menu {
+    left: 0;
+}
+
+
+h3 {
+    color: #050915;
+}
+
+.circle-tile {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.circle-tile-heading {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+    color: #FFFFFF;
+    height: 80px;
+    margin: 0 auto -40px;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 80px;
+}
+
+.circle-tile-heading .fa {
+    line-height: 80px;
+}
+
+.circle-tile-content {
+    padding-top: 50px;
+}
+
+.circle-tile-number {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px 0 15px;
+}
+
+.circle-tile-description {
+    text-transform: uppercase;
+}
+
+.circle-tile-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.circle-tile-footer:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.circle-tile-heading.dark-blue:hover {
+    background-color: #2E4154;
+}
+
+.circle-tile-heading.green:hover {
+    background-color: #138F77;
+}
+
+.circle-tile-heading.orange:hover {
+    background-color: #DA8C10;
+}
+
+.circle-tile-heading.blue:hover {
+    background-color: #2473A6;
+}
+
+.circle-tile-heading.red:hover {
+    background-color: #CF4435;
+}
+
+.circle-tile-heading.purple:hover {
+    background-color: #7F3D9B;
+}
+
+.tile-img {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+}
+
+.dark-blue {
+    background-color: #34495E;
+}
+
+.green {
+    background-color: #16A085;
+}
+
+.blue {
+    background-color: #2980B9;
+}
+
+.orange {
+    background-color: #F39C12;
+}
+
+.red {
+    background-color: #E74C3C;
+}
+
+.purple {
+    background-color: #8E44AD;
+}
+
+.dark-gray {
+    background-color: #7F8C8D;
+}
+
+.yellow {
+    background-color: #F1C40F;
+}
+
+.text-faded {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-panel .circle-tile-content>a {
+    text-decoration: none;
+}
+
+.admin-panel .circle-tile-content>a i {
+    margin-left: 10px;
+}

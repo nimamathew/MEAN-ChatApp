@@ -1,0 +1,107 @@
+/* 
+.chat-box{
+    background-color: #d2ebe8;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.chat-title {
+    padding: 15px;
+    border-bottom: 1px solid rgb(223, 5, 5);
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-color);
+    position: absolute;
+    color: var(--white);
+    top: 0px;
+    right: 0px;
+    left: 0px;    
+}
+.chat-title button{
+    margin-left: auto;
+}
+.chat-box .chat-title img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chat-body{
+    max-height: 70vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.chat-content{
+    padding: 8px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.chat-content::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+}
+.chat-content p{
+    background-color: #3ca89c;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+    max-width: 50%;
+    color: var(--white) !important;
+}
+
+.sender-chat-content li{
+    order: 1;
+    color: #fff;
+    margin-bottom: 0px !important; 
+    color: var(--white);
+    display: flex;
+flex-direction: column;
+align-items: end;
+}
+.sender-chat-content li p{
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+.sender-chat-content img{
+    order: 2;
+}
+.chat-footer{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    height: 50px;
+}
+.chat-footer textarea{
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px 12px ;
+    padding-right: 70px;
+    resize: none;
+}
+.message_form{
+    position: relative;
+}
+.message_form input[type="submit"]{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translatey(-50%);
+}
+.chat-head{
+    width: 30px ;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.mystyle{
+    background-color: antiquewhite;
+    border: 2px solid;
+} */

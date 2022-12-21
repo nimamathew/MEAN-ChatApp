@@ -1,0 +1,229 @@
+<section class="chat-section-bg">
+    <div class="container-fluid ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- tab -->
+
+                    <ul class="nav nav-tabs custom-nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" (click)="availableUsers()"
+                                href="#home">Private Chat</a>
+                        </li>
+                        <!-- <li class="nav-item groupmessageNav">
+                            <a class="nav-link" data-bs-toggle="tab" (click)="availablechatrooms()"
+                                href="#menu1">ChatRooms <span *ngIf="newGroupmsg"
+                                    class="newmsgalert bg-primary"></span></a>
+                        </li> -->
+                        <li class="nav-item blocked-navs">
+                            <a class="nav-link" data-bs-toggle="tab" (click)="blockedDetails()"
+                                href="#menu1">muted-chats</a>
+                        </li>
+
+
+                        <li class="nav-item blocked-navs">
+                            <a class="nav-link" data-bs-toggle="tab" (click)="blockedDetails()"
+                                href="#menu2">blocked-chats</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                        <!-- private chat-->
+                        <div class="tab-pane active" id="home">
+
+
+                            <div class="chat-list">
+                                <div class="form-check form-switch switch-custom">
+                                    <label class="form-check-label new-chat btn btn-success"
+                                        for="flexSwitchCheckChecked" *ngIf="!chatDataType"><img
+                                            src="../../assets/images/new-chat.png" class=""></label>
+                                    <label class="form-check-label new-chat btn btn-warning"
+                                        for="flexSwitchCheckChecked" *ngIf="chatDataType">view recent chats</label>
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="flexSwitchCheckChecked" checked (click)="chatToggle()">
+                                </div>
+                                <h4 *ngIf="!chatDataType" class="dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"> Recently interacted in Room 1</h4>
+                                <h5 class="text-center py-4" *ngIf="!Userdetails.length">No Recent chats</h5>
+
+                                <h4 *ngIf="chatDataType" class=" dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"> New chats</h4>
+                                    
+                                <ul class="dropdown-menu user-list show p-0">
+                                    <li *ngFor="let i of Userdetails" routerLinkActive="active">
+                                        <a href="#" routerLink="message/{{i.Username}}" (click)="getMessage(i,true)">
+                                            <!-- <a href="#" routerLink="message/{{i._id}}/{{i.Username}}" (click)="getMessage(i)"> -->
+                                            <div class="chathead-section">
+                                                <img src="../../assets/images/profile.jpg" class="chat-head">
+                                                <span *ngIf="i.onlineStatus==='online'"
+                                                    class="online-status online-bg"></span>
+                                                <span *ngIf="i.onlineStatus==='offline'"
+                                                    class="online-status offline-bg"></span>
+                                            </div>
+
+                                            <div class="chat-details">
+                                                <!-- <h6>{{i.Username}}<small class="bg-danger text-light ms-2">new</small></h6> -->
+                                                <h6>{{i.Username}}</h6>
+
+                                                <small *ngIf="newmessageSender.indexOf(i.Username) !== -1"
+                                                    class="newmsgalert bg-primary"></small>
+                                                <small>{{i.onlineStatus}}</small>
+
+
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- private chat ends-->
+
+                        <!-- chat rooms -->
+                        <!-- <div class="tab-pane fade" id="menu1">
+
+
+
+
+                            <div class="chat-list ">
+                                <button class="btn btn-success w-100 text-center mb-4 createroombtn"
+                                    (click)="createChatroom()"><img src="../../assets/images/group-msg.png"></button>
+                                <h4 *ngIf="!chatDataType" class=" dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">My chat rooms </h4>
+
+                                <h5 class="text-center py-4" *ngIf="!RoomDetails.length">No chat rooms</h5>
+                                <ul class="dropdown-menu user-list show">
+                                    <li *ngFor="let i of RoomDetails" routerLinkActive="active">
+                                        <a href="#" routerLink="message/{{i.RoomId}}"
+                                            (click)="getChatRoomMessages(i,true)">
+                                    <a href="#" routerLink="message/{{i._id}}/{{i.Username}}" (click)="getMessage(i)"> -->
+
+                                            <!-- <img src="../../assets/images/profile.jpg" class="chat-head">
+                                            <div class="chat-details">
+                                                <h6>{{i.Username}}<small class="bg-danger text-light ms-2">new</small></h6> -->
+                                                <!-- <small *ngIf="newmessageSender.indexOf(i.RoomId) !== -1"
+                                                    class="newmsgalert bg-primary"></small>
+                                                <h6>{{i.RoomId}}</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div> -->
+
+                        <!-- </div> -->  
+                        <!-- chat rooms ends -->
+
+                        <!-- muted-chats -->
+                        <div class="tab-pane fade" id="menu1">
+                            <div class="chat-list">
+                                <h6 *ngIf="!blocklists.length" class="text-center mt-5">no muted chats</h6>
+                                <ul *ngIf="blocklists.length">
+                                    <!-- <h5 class="text-center">Blocked chats</h5> -->
+                                    <li *ngFor="let i of blocklists" routerLinkActive="active">
+                                        <a href="#" routerLink="message/{{i.Username}}" (click)="getMessage(i,false)">
+                                            <!-- <a href="#" routerLink="message/{{i._id}}/{{i.Username}}" (click)="getMessage(i)"> -->
+
+                                            <img src="../../assets/images/profile.jpg" class="chat-head">
+                                            <div class="chat-details">
+                                                <h6>{{i.Username}}</h6>
+                                                <!-- <label class="status">Happy to mingle</label> -->
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- muted-chats -->
+
+                        <!-- blocked chats -->
+                        <div class="tab-pane fade" id="menu2">
+                            <div class="chat-list">
+                                <h6 *ngIf="!blocklists.length" class="text-center mt-5">no blocked chats</h6>
+                                <ul *ngIf="blocklists.length">
+                                    <!-- <h5 class="text-center">Blocked chats</h5> -->
+                                    <li *ngFor="let i of blocklists" routerLinkActive="active">
+                                        <a href="#" routerLink="message/{{i.Username}}" (click)="getMessage(i,false)">
+                                            <!-- <a href="#" routerLink="message/{{i._id}}/{{i.Username}}" (click)="getMessage(i)"> -->
+
+                                            <img src="../../assets/images/profile.jpg" class="chat-head">
+                                            <div class="chat-details">
+                                                <h6>{{i.Username}}</h6>
+                                                <!-- <label class="status">Happy to mingle</label> -->
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- blocked ends -->
+                    </div>
+
+                    <!-- tab end -->
+                </div>
+                <div class="col-lg-8 mt-3 mt-lg-0">
+                    <div class="chat-box">
+                        <app-chatbox [parentData]=data (parentFun)='blocklistUpdate()'
+                            (unblocklist)='unblockblocklistUpdate()' (chatlist)="updatechatlist()"
+                            (grouplist)='updateGroupDetails()'></app-chatbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- <div class="modal custom-modal " tabindex="-1" id="CreateRoomModal" aria-labelledby="CreateRoomModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <form (submit)="createRoom()" id="forward-form" #createROomForm="ngForm">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h5 class="modal-title text-center">Create Private Room</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <!-- </div>
+                <div class="modal-body CreateRoomBox forward-box">
+                    <h6>Enter Room Name</h6>
+                    <input type="text" id="room_name" name="room" [(ngModel)]="RoomName" class="form-control" (keyup)="RoomNameAvailability()">
+                    <label for="" class="error-msg mb-0" *ngIf="GroupnameAvailability" >Groupname not available | Already exist</label> 
+                   
+                    <ul>
+                        <h6 class="my-3">Select Receipts</h6>
+                        <li *ngFor="let i of Userdetails">
+                            <input type="checkbox" [name]="i._id" [id]="i.Username" [value]="i.Username"
+                                (change)="onCheck(i.Username)" />
+                            <label for="{{i.Username}}">{{i.Username}}</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <ul class="receipts-list">
+                        <li *ngFor="let i of checkedUserss">
+                            <img src="../../assets/images/tick.png">
+                            <label>{{i}}</label>
+                        </li>
+                    </ul>
+                    <br>
+                    <button type="reset" class="btn btn-danger" data-bs-dismiss="modal"
+                        (click)="resetForm()">Cancel</button> -->
+                    <!-- <button type="submit" class="btn btn-blue" [disabled]="checkedUserss.length===0?true:false"
+                        data-bs-dismiss="modal">Create Room</button> -->
+
+                    <!-- <button type="submit" class="btn btn-blue"
+                        [disabled]="GroupnameAvailability || checkedUserss.length===0?true:false || !RoomName" data-bs-dismiss="modal">Create
+                        Room</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div> --> 

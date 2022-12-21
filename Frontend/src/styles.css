@@ -1,0 +1,257 @@
+
+ul{
+  padding-left: 0px !important;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+.hr_custom{
+   border: 1px solid #ffffff;
+    opacity: 1;
+  }
+:root {
+  /* --primary-color: #3aaea1; */
+  --primary-color: #376488;
+  --white: #ffffff;
+  --black:#24323d;
+  --light-color:#2f70a3;
+  /* --dark-color: #376a91; */
+  --dark-color: #318fbe;
+  --dark-color-transparent: #24323dd3;
+}
+
+/* Modal popup custom */
+
+/* Modal popup */
+.custom-modal .modal-header {
+  justify-content: center;
+}
+
+.custom-modal .modal-body{
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  text-align: center;
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+.custom-modal .modal-body ul {
+  padding-left: 0px;
+}
+
+.custom-modal .modal-body ul li {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.custom-modal .modal-body ul li input[type='checkbox'] {
+  display: none;
+}
+
+.custom-modal .modal-body ul li input[type='checkbox']:checked+label::before {
+  /* background-color: #1b1b1b; */
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background-size: contain;
+  background-image: url(assets/images/tick.png)!important;
+}
+
+.custom-modal .modal-body ul li label {
+  background-color: #376488;
+  position: relative;
+  display: flex;
+  color: #fff;
+  padding: 10px 15px 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.receipts-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.receipts-list li {
+  margin-right: 8px;
+  background-color: #376488;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+
+}
+.receipts-list li {
+  font-size: 13px;
+}
+.receipts-list li img {
+  width: 14px;
+  margin-right: 10px;
+}
+/* Modal popup custom ends */
+
+.error-msg {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #ff7f7f;
+}
+
+.MyMsg {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  align-self: end;
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 25px;
+  margin-bottom: 0px;
+}
+.MyMsg .copy-btn{
+  bottom: 5px;
+  right: 15px;
+  background-color: #243949;
+  border-radius: 10px;
+}
+.MyMsg small,
+.receivedMsg small {
+  /* background-color: white; */
+  color: #fff;
+  text-align: center;
+  align-self: center;
+  /* padding: 8px; */
+  font-size: 10px;
+  line-height: 14px;
+  border-radius: 8px;
+}
+
+.MyMsg p,
+.MyMsg-p,
+.receivedMsg p {
+  background-color: #376488;
+  color: #fff;
+  padding: 8px 13px;
+  text-align: right;
+  align-self: flex-end;
+  word-wrap: anywhere;
+  border-radius: 15px;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 25px;
+}
+.receivedMsg-alert{
+  text-align: center;
+}
+.receivedMsg-alert small{
+  font-size: 12px;
+}
+.receivedMsg-alert span{
+  background-color: #8383836e;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: 300;
+}
+.receivedMsg .sender-name{
+  padding: 3px;
+  color: #aace27;
+  font-size: 12px;
+}
+.MyMsg .sender-name{
+  padding: 3px;
+  color: #e8b67e;
+  font-size: 12px;
+  background-color: #24323d6d;
+}
+.MyMsg span {
+
+  font-size: 10px;
+
+}
+
+.receivedMsg {
+  color: #fff;
+  align-self: baseline;
+  border-radius: 20px;
+  word-wrap: break-word;
+  max-width: 50%;
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 0px;
+}
+
+.receivedMsg p {
+  background-color: #243949;
+  text-align: left;
+  padding-bottom: 25px;
+}
+.receivedMsg .copy-btn{
+  bottom: 5px;
+  background-color: #2f70a3;
+  border-radius: 10px;
+}
+.copy-text {
+  width: 17px;
+  border: 0px;
+}
+
+.copy-btn {
+  background-color: transparent;
+  outline: none;
+  border: 0px;
+  display: none;
+  position: absolute;
+}
+
+.MyMsg:hover .copy-btn,
+.MyMsg:hover .forward-text,.receivedMsg:hover .copy-btn,
+.receivedMsg:hover .forward-text {
+  display: inline-flex;
+  align-items: center;
+}
+.receivedMsg:hover .forward-text{
+  left: auto !important;
+  right: -5px;
+}
+.forward-text {
+  position: absolute;
+  left: -5px;
+  bottom: 25px;
+  background-color: transparent;
+  display: none;
+  border: 0px;
+}
+
+.forward-text:hover {
+  opacity: 0.6;
+}
+
+.forward-text img {
+  width: 100%;
+  width: 15px;
+}
+
+.forward-input {
+  margin-bottom: 15px;
+}
+
+.btn-blue {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+@media(max-width:576px){
+  .MyMsg, .receivedMsg{
+    max-width: 85%;
+  }
+}

@@ -1,0 +1,100 @@
+
+@import url(../../styles.css);
+h3 {
+    color: var(--primary-color);
+}
+
+.inner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/images/form.jfif');
+    padding: 50px 0px;
+}
+
+.register-box {
+    padding: 40px 30px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-color-transparent);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.register-box input {
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    color: var(--white);
+    width: 100%;
+}
+
+.profile-pic-select{
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.profile-pic-select label{
+    color: var(--white);
+    opacity: 0.5;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 14px;
+    margin-top: 15px;
+    border: 1px solid var(--primary-color);
+}
+.custom-form input[type="submit"]:hover{
+    background-color: transparent;
+    color: #3aaea1;
+}
+.custom-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.custom-form input[type="submit"]{
+    background-color: var(--primary-color);
+}
+#myTabContent {
+    width: 100%;
+}
+
+.register-box .nav-tabs {
+    border: 0px;
+}
+
+.register-box .nav-link {
+    border-radius: 0px;
+    outline: 0px;
+    background-color: rgba(255, 255, 255, 0.126);
+    color: var(--white);
+    border: 0px;
+    padding: 12px;
+    min-width: 130px;
+}
+
+.register-box .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+@media (max-width:576px){
+    .register-box .nav-link{
+        min-width: 90px;
+    }
+}
+.signup-alert{
+    background-color: #3aaea1;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: var(--white);
+    text-transform: capitalize;
+}

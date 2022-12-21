@@ -1,0 +1,112 @@
+<div class="chat-box">
+    <!-- <div class="chat-title"> -->
+    <div class="chat-title" *ngIf="receiver">
+
+        <img src="../../assets/images/profile.jpg">
+        <h5 class="ms-2"><span>{{receiver}}</span><br>
+            <a href="" class="text-gray" *ngIf="GroupMessage" (click)="getGroupDetails($event,receiver)"><small>Group Details</small></a>
+        </h5>
+        <p *ngFor="let i of groupdetails" class="mb-0 ms-auto">
+        <button class="btn btn-danger" (click)="LeaveGroup()" *ngIf="GroupMessage && i.Admin!=user">Leave Group</button>
+        <button class="btn btn-danger" (click)="DeleteGroup()" *ngIf="GroupMessage && i.Admin===user">Delete Group</button>
+        </p>
+        
+        <button class="btn btn-danger" (click)="blockUser()" *ngIf="!GroupMessage && MessageType===true">mute</button>
+        <button class="btn btn-secondary" (click)="unblockUser()" *ngIf="MessageType===false">unmute</button>
+        <button class="btn btn-danger" (click)="blockUser()" *ngIf="!GroupMessage && MessageType===true">block</button>
+        <button class="btn btn-secondary" (click)="unblockUser()" *ngIf="MessageType===false">unblock</button>
+    </div>
+    <div class="chat-body">
+        <h5 class="text-center" *ngIf="!receiver">Send messages <br> to a friend or group.</h5>
+    </div>
+
+    <div class="chat-body" id="chat-body" *ngIf="receiver" >
+
+        <div class="chat-content" id="chat-content" >
+            <div id="{{receiver}}"></div>
+            
+        </div>
+
+    </div>
+    <div class="chat-footer" *ngIf="receiver">
+        <form class="message_form" #msgForm="ngForm" (ngSubmit)="sendMessage()" id="msgForm">
+
+            <textarea placeholder="Type your message here..." id="messages" rows="1" [(ngModel)]="message"
+                name="message" required [disabled]="MessageType===false"></textarea>
+            <input type="submit" class="btn btn-success" value="send" [disabled]="msgForm.invalid || MessageType===false">
+        </form>
+    </div>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Launch demo modal
+  </button> -->
+
+  <div class="modal custom-modal" data-backdrop="static" tabindex="-1" id="groupdetails" aria-labelledby="groupdetails" aria-hidden="true">
+    <div class="modal-dialog">
+        
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h4 class="modal-title">Group Details</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li *ngFor="let i of groupdetails">
+                            <h5><b>Admin</b></h5>
+                            <h6>{{i.Admin}}</h6>
+                            <hr>
+                            <h5><b>Members</b></h5>
+                            <small *ngFor="let j of i.Members" >
+                               <span *ngIf="j!=i.Admin">{{j}}</span><br>
+                            </small>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="modal custom-modal modal-dialog-scrollable " data-backdrop="static" tabindex="-1" id="myModal" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <form (submit)="MsgForward()" id="forward-form" #forward_form="ngForm">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h4 class="modal-title">Forward message</h4>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body forward-box">
+                    <div id="ForwardMessage">
+                        
+                    </div>
+                    <ul>
+                        <h5>Select Receipts</h5>
+                        <li *ngFor="let i of Userdetails">
+                            <input type="checkbox" [name]="i._id" [id]="i._id" [value]="i.Username"
+                                (change)="onCheck(i.Username)" />
+                            <label for="{{i._id}}">{{i.Username}}</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <ul class="receipts-list">
+                        <li *ngFor="let i of checkedUsers">
+                            <img src="../../assets/images/tick.png">
+                            <label>{{i}}</label>
+                        </li>
+                    </ul>
+                    <br>
+                    <button type="reset" class="btn btn-danger" data-bs-dismiss="modal" (click)="resetForm()" >Cancel</button>
+                    <button type="submit" class="btn btn-blue" [disabled]="checkedUsers.length===0?true:false" data-bs-dismiss="modal">forward Message</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
