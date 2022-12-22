@@ -1,67 +1,8 @@
 <div class="inner-section">
     <div class="container">
         <div class="register-box">
-            <!-- <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="register-tab" data-bs-toggle="tab" data-bs-target="#register"
-                        type="button" role="tab" aria-controls="register" aria-selected="true">Sign Up</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="login-tab" data-bs-toggle="tab" data-bs-target="#login"
-                        type="button" role="tab" aria-controls="login" aria-selected="false">Login</button>
-                </li>
-            </ul> -->
-
-            <div class="tab-content" id="myTabContent">
-                <!-- <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
-                    <h3 class="mb-4 text-center">Create Account</h3>
-                    <form class="custom-form" [formGroup]="userForm" (ngSubmit)="signup()" method="POST"
-                    enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" placeholder="First Name" class="form-control"
-                                    formControlName="firstname">
-                                <label for="" class="error-msg"
-                                    *ngIf="userForm.get('firstname').invalid && userForm.get('firstname').touched">Firstname
-                                    required</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Last Name" class="form-control"
-                                    formControlName="lastname">
-                                <label for="" class="error-msg"
-                                    *ngIf="userForm.get('lastname').invalid && userForm.get('lastname').touched">Lastname
-                                    required</label>
-                            </div>
-                        </div>
-
-                        <input type="text" placeholder="User Name" class="form-control" formControlName="username" (keyup)="usernameAvailabilitycheck()">
-                        <label for="" class="error-msg" *ngIf="usernameavailability" >Username not available | Already exist</label> 
-                        <label for="" class="error-msg"
-                            *ngIf="userForm.get('username').invalid && userForm.get('username').touched" >Username
-                            Required Minimum 6 characters</label>
-
-                        <input type="email" placeholder="Email" class="form-control" formControlName="email">
-                        <label class="error-msg"
-                            *ngIf="userForm.get('email').invalid && userForm.get('email').touched">Enter a valid Email
-                            address</label>
-                        
-                        <input type="password" placeholder="Password" class="form-control"
-                            formControlName="password" (keyup)="pwdMatchValidator()"><br>
-                        <label for="" class="error-msg"
-                            *ngIf="userForm.get('password').invalid && userForm.get('password').touched">Password Must
-                            contain at least one number and one uppercase and lowercase letter, and at least 8 or more
-                            characters</label>
-                        <input type="password" placeholder="Re-type Password" class="form-control"
-                            formControlName="cPassword" (keyup)="pwdMatchValidator()"><br>
-                        <label class="error-msg" *ngIf="!Cnfmpswd && userForm.get('cPassword').touched">Passwords do not
-                            match</label>
-                        
-                        <label *ngIf="signupalert" class="signup-alert">signup success <br>redirecting to login page</label>
-                        <input class="primary-btn btn" value="Sign up" type="submit" [disabled]="usernameavailability || userForm.invalid || !Cnfmpswd "
-                            >
-                    </form>
-                </div> -->
-
+                <div class="tab-content" id="myTabContent">
+             
                 <div  id="login" role="tabpanel" aria-labelledby="login-tab">
                     <h3 class="mb-4 text-center">Log in</h3>
                     <form class="custom-form" (ngSubmit)="login()">

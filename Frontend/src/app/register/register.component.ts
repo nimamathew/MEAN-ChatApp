@@ -55,9 +55,7 @@ export class RegisterComponent implements OnInit {
   signup() {
     this.UserService.RegisterUser(this.userForm.value)
     this.signupalert = true
-    setTimeout(function () {
-      $("#login-tab").click();
-    }, 2000);
+    this._router.navigate(['/login']); 
   }
   login() {
     this.chatService.notifications()

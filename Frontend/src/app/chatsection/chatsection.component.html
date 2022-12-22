@@ -82,43 +82,7 @@
                             </div>
 
                         </div>
-                        <!-- private chat ends-->
-
-                        <!-- chat rooms -->
-                        <!-- <div class="tab-pane fade" id="menu1">
-
-
-
-
-                            <div class="chat-list ">
-                                <button class="btn btn-success w-100 text-center mb-4 createroombtn"
-                                    (click)="createChatroom()"><img src="../../assets/images/group-msg.png"></button>
-                                <h4 *ngIf="!chatDataType" class=" dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">My chat rooms </h4>
-
-                                <h5 class="text-center py-4" *ngIf="!RoomDetails.length">No chat rooms</h5>
-                                <ul class="dropdown-menu user-list show">
-                                    <li *ngFor="let i of RoomDetails" routerLinkActive="active">
-                                        <a href="#" routerLink="message/{{i.RoomId}}"
-                                            (click)="getChatRoomMessages(i,true)">
-                                    <a href="#" routerLink="message/{{i._id}}/{{i.Username}}" (click)="getMessage(i)"> -->
-
-                                            <!-- <img src="../../assets/images/profile.jpg" class="chat-head">
-                                            <div class="chat-details">
-                                                <h6>{{i.Username}}<small class="bg-danger text-light ms-2">new</small></h6> -->
-                                                <!-- <small *ngIf="newmessageSender.indexOf(i.RoomId) !== -1"
-                                                    class="newmsgalert bg-primary"></small>
-                                                <h6>{{i.RoomId}}</h6>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div> -->
-
-                        <!-- </div> -->  
-                        <!-- chat rooms ends -->
-
+                        
                         <!-- muted-chats -->
                         <div class="tab-pane fade" id="menu1">
                             <div class="chat-list">
@@ -183,47 +147,3 @@
 
 
 
-<!-- <div class="modal custom-modal " tabindex="-1" id="CreateRoomModal" aria-labelledby="CreateRoomModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <form (submit)="createRoom()" id="forward-form" #createROomForm="ngForm">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <h5 class="modal-title text-center">Create Private Room</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                <!-- </div>
-                <div class="modal-body CreateRoomBox forward-box">
-                    <h6>Enter Room Name</h6>
-                    <input type="text" id="room_name" name="room" [(ngModel)]="RoomName" class="form-control" (keyup)="RoomNameAvailability()">
-                    <label for="" class="error-msg mb-0" *ngIf="GroupnameAvailability" >Groupname not available | Already exist</label> 
-                   
-                    <ul>
-                        <h6 class="my-3">Select Receipts</h6>
-                        <li *ngFor="let i of Userdetails">
-                            <input type="checkbox" [name]="i._id" [id]="i.Username" [value]="i.Username"
-                                (change)="onCheck(i.Username)" />
-                            <label for="{{i.Username}}">{{i.Username}}</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <ul class="receipts-list">
-                        <li *ngFor="let i of checkedUserss">
-                            <img src="../../assets/images/tick.png">
-                            <label>{{i}}</label>
-                        </li>
-                    </ul>
-                    <br>
-                    <button type="reset" class="btn btn-danger" data-bs-dismiss="modal"
-                        (click)="resetForm()">Cancel</button> -->
-                    <!-- <button type="submit" class="btn btn-blue" [disabled]="checkedUserss.length===0?true:false"
-                        data-bs-dismiss="modal">Create Room</button> -->
-
-                    <!-- <button type="submit" class="btn btn-blue"
-                        [disabled]="GroupnameAvailability || checkedUserss.length===0?true:false || !RoomName" data-bs-dismiss="modal">Create
-                        Room</button>
-                </div>
-            </div>
-
-        </form>
-    </div>
-</div> --> 
